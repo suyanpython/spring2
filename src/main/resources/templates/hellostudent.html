@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/demo.css}" />
+    <title>My HTML Page</title>
+</head>
+<body>
+<header>
+    <h1>Hello</h1>
+</header>
+<main>
+ Student: <span th:text="${param.studentName}" />
+
+    <p>
+        Message : <span th:text="${message}" />
+    </p>
+</main>
+<footer>
+    <p>© 2023 My Website</p>
+</footer>
+</body>
+</html>
