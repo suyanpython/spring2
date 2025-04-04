@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/demo.css}" />
+    <title>Student confirmation</title>
+</head>
+<body>
+<header>
+    <h1>Student confirmation</h1>
+</header>
+<main>
+   The student is ok: <span th:text="${student.firstName} + ' ' + ${student.lastName}" />
+    <br>
+    Country: <span th:text="${student.country}"></span>
+    <br>
+    Favorite lang<!DOCTYPE HTML>
+    <html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+        <link rel="stylesheet" th:href="@{/css/demo.css}" />
+        <title>Hello World - Form</title>
+    </head>
+    <body>
+    <header>
+        <h1>Welcome to My Page</h1>
+    </header>
+    <main>
+        <form th:action="@{/processFormVersionThree}" method="POST">
+
+            <input type="text" name="studentName" placeholder="What's your name?" />
+            <input type="submit" />
+
+        </form>
+    </main>
+    <footer>
+        <p>© 2023 My Website</p>
+    </footer>
+    </body>
+    </html>
+    uage: <span th:text="${student.favoriteLanguage}"></span>
+    <br>
+    Favorite Operation System:
+    <ul>
+        <li th:each="temop : ${student.favoriteSystem}" th:text="${temop}" />
+    </ul>
+    <!--<span th:text="${student.favoriteSystem}"></span> -->
+</main>
+<footer>
+    <p>© 2023 My Website</p>
+</footer>
+</body>
+</html>

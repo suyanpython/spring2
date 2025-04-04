@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/demo.css}" />
+    <title>Hello World - Form</title>
+</head>
+<body>
+<header>
+    <h1>Student form</h1>
+</header>
+<main>
+    <form th:action="@{/processStudentForm}" th:object="${student}" method="POST">
+
+        First name: <input type="text" th:field="*{firstName}" />
+        <br><br>
+        Last name: <input type="text" th:field="*{lastName}" />
+        <br><br>
+
+        <select name="country" th:field="*{country}">
+            <option th:each="tempCountry : ${countries}" th:value="${tempCountry}" th:text="${tempCountry}"/>
+        </select>
+
+        <br>
+        <label th:each="tempLang : ${languages}">
+            <input type="radio"
+                   th:field="*{favoriteLanguage}"
+                   th:value="${tempLang}" />
+            <span th:text="${tempLang}"></span>
+        </label>
+    <br>
+        <input type="checkbox"
+               th:field="*{favoriteSystem}"
+               th:each="temop : ${favops}"
+               th:value="${temop}"
+               th:text="${temop}"
+
+        />
+    <br>
+        <input type="submit" value="Submit" />
+
+    </form>
+</main>
+<footer>
+    <p>© 2023 My Website</p>
+</footer>
+</body>
+</html>
