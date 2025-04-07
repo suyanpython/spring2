@@ -1,10 +1,21 @@
 package com.example.springboot.thymleafdemo.model;
 
+import com.example.springboot.thymleafdemo.validation.SuyanCode;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 import java.util.List;
 
 public class Student {
+    @NotBlank(message = "First name is required")
     private String firstName;
+
+    @SuyanCode(value="S", message="must start with S")
+    @NotNull
+    @Size(min = 2, message = "Last name must be at least 2 characters")
     private String lastName;
+
     private String country;
     private String favoriteLanguage;
     private List<String> favoriteSystem;
