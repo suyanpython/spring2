@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http:/www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +12,20 @@
         <h1>List Employees</h1>
     </header>
     <main>
+
+        User: <span sec:authentication="principal.username"></span>
+        <br>
+        Role(s):  <span sec:authentication="principal.authorities"></span>
+
+        <br>
+        <hr>
+        <p sec:authorize="hasRole('MANAGER')">
+            <a th:href="@{/leaders}">Leadership Meeting</a>
+        </p>
+        <p>
+            <a th:href="@{/systems}">IT System Meeting</a>
+        </p>
+        <hr>
         <div class="container">
             <h3>Employee Directory</h3>
             <hr>
@@ -51,6 +65,9 @@
             </table>
         </div>
 
+        <form action="#" th:action="@{/logout}" method="POST">
+            <input type="submit" value="Logout" />
+        </form>
     </main>
     <footer>
         <p>© 2025 My Website</p>

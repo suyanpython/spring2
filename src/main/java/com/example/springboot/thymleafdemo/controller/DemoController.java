@@ -12,4 +12,14 @@ class DemoController {
         theModel.addAttribute("theDate",java.time.LocalDate.now());
         return "helloworld";
     }
+
+    @GetMapping("/leaders")
+    public String showLeaders() {
+        return "leaders";
+    }
+
+    @GetMapping("/systems")
+    public String showSystems() {
+        return "systems";
+    }
 }
